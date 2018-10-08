@@ -1,0 +1,8 @@
+.components-RightPanel-BodyRight-WindowApp-PayWindow-root {
+    height: 100%;
+    display: none;
+}
+
+.payPage .components-RightPanel-BodyRight-WindowApp-PayWindow-root {
+    display: block;
+}

@@ -1,0 +1,8 @@
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-root {
+    height: 100%;
+    display: none;
+}
+
+.menuPage .components-RightPanel-BodyRight-WindowApp-MenuWindow-root {
+    display: block;
+}

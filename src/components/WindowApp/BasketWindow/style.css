@@ -1,0 +1,8 @@
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-root {
+    height: 100%;
+    display: none;
+}
+
+.basketPage .components-RightPanel-BodyRight-WindowApp-BasketWindow-root {
+    display: block;
+}

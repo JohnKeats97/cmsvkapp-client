@@ -1,0 +1,8 @@
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-root {
+    height: 100%;
+    display: none;
+}
+
+.productPage .components-RightPanel-BodyRight-WindowApp-ProductWindow-root {
+    display: block;
+}
