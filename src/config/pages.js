@@ -13,7 +13,7 @@ export default {
             text: 'Введите адрес доставки',
             style: {
                 color: '#000000',
-                fontSize: '20px',
+                fontSize: '25px',
                 left: '270px',
                 top: '250px',
             }
@@ -33,7 +33,22 @@ export default {
                 borderRadius: '10px',
                 left: '570px',
                 top: '300px',
-                outline: 'none'
+                outline: 'none',
+                fontSize: '15px'
+            }
+        },
+        inputAddress: {
+            placeholder: 'Адрес доставки...',
+            style: {
+                background: '#ffffff',
+                color: '#000000',
+                height: '50px',
+                width: '390px',
+                borderRadius: '10px',
+                left: '170px',
+                top: '300px',
+                outline: 'none',
+                fontSize: '15px'
             }
         }
     },

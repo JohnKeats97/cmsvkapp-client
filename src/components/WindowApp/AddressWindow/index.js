@@ -13,6 +13,11 @@ export default (props) => {
         >
             {props.pageConfig.title.text}
         </div>
+        <input
+            className="components-RightPanel-BodyRight-WindowApp-AddressWindow-inputAddress"
+            style={props.pageConfig.inputAddress.style}
+            placeholder={props.pageConfig.inputAddress.placeholder}
+        />
         <button
             className="components-RightPanel-BodyRight-WindowApp-AddressWindow-buttonOk"
             style={props.pageConfig.buttonOK.style}
