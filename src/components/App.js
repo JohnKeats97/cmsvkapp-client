@@ -15,16 +15,6 @@ export default class Background extends React.Component {
             pageConfig: pageConfig,
             page: 'addressPage'
         };
-
-        Fetch.Get('/test/config')
-            .then(response => {
-                if (response) {
-                    this.setState((state)=>{
-                        state.pageConfig = response;
-                        return state;
-                    });
-                }
-            });
     }
 
 
