@@ -1,6 +1,7 @@
 .components-RightPanel-BodyRight-WindowApp-LoadingWindow-root {
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .loadingPage .components-RightPanel-BodyRight-WindowApp-LoadingWindow-root {

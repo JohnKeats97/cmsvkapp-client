@@ -1,6 +1,7 @@
 .components-RightPanel-BodyRight-WindowApp-AddressWindow-root {
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .addressPage .components-RightPanel-BodyRight-WindowApp-AddressWindow-root {
