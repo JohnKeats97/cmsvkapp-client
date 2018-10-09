@@ -1,6 +1,7 @@
 .components-RightPanel-BodyRight-WindowApp-ProductWindow-root {
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .productPage .components-RightPanel-BodyRight-WindowApp-ProductWindow-root {

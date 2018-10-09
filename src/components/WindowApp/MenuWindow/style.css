@@ -1,6 +1,7 @@
 .components-RightPanel-BodyRight-WindowApp-MenuWindow-root {
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .menuPage .components-RightPanel-BodyRight-WindowApp-MenuWindow-root {
