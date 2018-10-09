@@ -13,10 +13,18 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'addressPage'
+            page: 'loadingPage'
         };
+        this.menu = {};
     }
 
+    onOpenNewPage (page, menu) {
+        if (!menu) {
+            this.menu = menu;
+        }
+
+        this.setState((state)=>(state.page = page, state));
+    }
 
     render () {
         const {state} = this;
@@ -24,6 +32,7 @@ export default class Background extends React.Component {
             <WindowApp
                 pageConfig={state.pageConfig}
                 page={state.page}
+                onOpenNewPage={this.onOpenNewPage.bind(this)}
             />
         </div>
     }
