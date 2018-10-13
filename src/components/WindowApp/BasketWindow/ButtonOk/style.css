@@ -1,0 +1,17 @@
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ButtonOk-root {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    width: 140px;
+    height: 40px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ButtonOk-price {
+    float: right;
+    padding-right: 10px;
+    /*font-family: PTRoubleSans,Helvetica,Arial,sans-serif;*/
+    /*text-transform: uppercase;*/
+}

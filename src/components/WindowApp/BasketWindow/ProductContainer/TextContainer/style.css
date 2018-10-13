@@ -1,0 +1,18 @@
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-root {
+    position: relative;
+    display: block;
+    margin-top: 5px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-text {
+    width: inherit;
+    height: 40px;
+    text-align: left;
+    display: block;
+    position: relative;
+    padding: 15px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-price {
+    float: right;
+}

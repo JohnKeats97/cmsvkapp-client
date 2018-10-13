@@ -5,18 +5,15 @@
  * @module Fetch
  */
 
-const BaseUrl = "https://cmsvkapp.herokuapp.com/api";
-
 export default class Fetch
 {
     /**
      * Выполняет GET-запрос по указанному адресу с использованием fetch
-     * @param {string} address - адрес запроса
+     * @param {string} url - адрес запроса
      * @return {Promise}
      */
-    static Get(address)
+    static Get(url)
     {
-        const url = BaseUrl + address;
         return fetch(url,
             {
                 method: 'GET',
@@ -33,13 +30,12 @@ export default class Fetch
 
     /**
      * Выполняет POST-запрос по указанному адресу с использованием fetch
-     * @param {string} address - адрес запроса
+     * @param {string} url - адрес запроса
      * @param {*} body - тело запроса (объект)
      * @return {Promise}
      */
-    static Post(address, body)
+    static Post(url, body)
     {
-        const url = BaseUrl + address;
         return fetch(url,
             {
                 method: 'POST',

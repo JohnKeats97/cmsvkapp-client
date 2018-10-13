@@ -13,19 +13,19 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'loadingPage'
+            page: 'addressPage'
         };
         this.menu = {};
 
-        Fetch.Get('/test/config')
-            .then(response => {
-                if (response) {
-                    this.setState((state)=>{
-                        state.pageConfig = response;
-                        return state;
-                    });
-                }
-            });
+        // Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
+        //     .then(response => {
+        //         if (response) {
+        //             this.setState((state)=>{
+        //                 state.pageConfig = response;
+        //                 return state;
+        //             });
+        //         }
+        //     });
     }
 
     onOpenNewPage (page, menu) {

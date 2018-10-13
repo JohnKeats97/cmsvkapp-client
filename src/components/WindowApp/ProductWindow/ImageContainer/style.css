@@ -1,0 +1,15 @@
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-ImageContainer-root {
+    display: block;
+    position: absolute;
+}
+
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-ImageContainer-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    padding: 5px 0 5px 0;
+}
