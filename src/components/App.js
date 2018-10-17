@@ -15,17 +15,19 @@ export default class Background extends React.Component {
             pageConfig: pageConfig,
             page: 'basketPage'
         };
+
+        // для меню блюд
         this.menu = {};
 
-        // Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
-        //     .then(response => {
-        //         if (response) {
-        //             this.setState((state)=>{
-        //                 state.pageConfig = response;
-        //                 return state;
-        //             });
-        //         }
-        //     });
+        Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
+            .then(response => {
+                if (response) {
+                    this.setState((state)=>{
+                        state.pageConfig = response;
+                        return state;
+                    });
+                }
+            });
     }
 
     onOpenNewPage (page, menu) {
@@ -38,6 +40,7 @@ export default class Background extends React.Component {
 
     render () {
         const {state} = this;
+        console.log(state.pageConfig);
         return <div className='root'>
             <WindowApp
                 pageConfig={state.pageConfig}
