@@ -2,8 +2,116 @@
     height: 100%;
     display: none;
     position: relative;
+    overflow-y: auto;
 }
 
 .menuPage .components-RightPanel-BodyRight-WindowApp-MenuWindow-root {
     display: block;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-title {
+    display: block;
+    position: relative;
+    margin: 30px 0 -5px 40px;
+    font-weight: bold;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item {
+    display: inline-block;
+    vertical-align: top;
+    height: 121px;
+    width: calc(45% - 36px);
+    max-width: 498px;
+    margin: 26px 34px 10px 40px;
+    border-radius: 4px;
+    border: 1px solid #e4e5e6;
+    font-size: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item:hover {
+    border-color: #b6babf;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-link {
+    display: block;
+    height: 100%;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-button {
+    display: none;
+    text-align: center;
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    line-height: 33px;
+    vertical-align: top;
+    padding: 0 20px;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    height: 32px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item:hover .components-RightPanel-BodyRight-WindowApp-MenuWindow-item-button {
+    display: block;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-photo {
+    display: inline-block;
+    vertical-align: top;
+    width: 116px;
+    height: 119px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    border-left: 1px solid #e4e5e6;
+    max-width: 116px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-info {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 116px);
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-title {
+    max-height: 35px;
+    display: block;
+    font-size: 15px;
+    color: #2e2e33;
+    line-height: 17px;
+    font-family: OsnovaMedium,Helvetica,Arial,sans-serif;
+    overflow: hidden;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-decs {
+    height: 17px;
+    display: block;
+    font-size: 12px;
+    color: #919399;
+    line-height: 16px;
+    margin-top: 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item-price {
+    font-size: 15px;
+    height: 32px;
+    line-height: 33px;
+    display: block;
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    color: #2e2e33;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-item:hover .components-RightPanel-BodyRight-WindowApp-MenuWindow-item-price {
+    display: none
 }
