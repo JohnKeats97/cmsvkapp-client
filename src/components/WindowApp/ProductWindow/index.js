@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ProductContainer from './ProductContainer'
-import ImageContainer from './ImageContainer'
-import ButtonClose from './ButtonClose'
-import InputCount from './InputCount'
-import ButtonOk from './ButtonOk'
+import ProductContainer from './ProductContainer/index'
+import ImageContainer from './ImageContainer/index'
+import ButtonClose from './ButtonClose/index'
+import InputCount from './InputCount/index'
+import ButtonOk from './ButtonOk/index'
 
 import './style.css';
 

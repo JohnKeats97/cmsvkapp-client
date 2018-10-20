@@ -11,13 +11,13 @@ export default {
             style: {
                 color: '#000000',
                 fontSize: '30px',
-                left: '310px',
+                left: '350px',
                 top: '250px',
             }
         },
         loader: {
             style: {
-                left: '330px',
+                left: '370px',
                 top: '315px'
             },
             circle: {
@@ -54,7 +54,7 @@ export default {
                 width: '100px',
                 borderRadius: '10px',
                 left: '570px',
-                top: '300px',
+                top: '310px',
                 fontSize: '15px',
                 borderWidth: '1px'
             }
@@ -68,8 +68,7 @@ export default {
                 width: '390px',
                 borderRadius: '10px',
                 left: '170px',
-                top: '300px',
-                outline: 'none',
+                top: '310px',
                 fontSize: '15px',
                 borderWidth: '1px'
             }
@@ -82,6 +81,23 @@ export default {
                 background: '#ffbdd3'
             }
         },
+        title: {
+            style: {
+                color: '#000000',
+                fontSize: '20px'
+            }
+        },
+        buttonOk: {
+            text: 'Заказать',
+            style: {
+                background: '#9ccd2d',
+                color: '#ffffff',
+                width: '100px',
+                borderRadius: '2px',
+                fontSize: '15px',
+                borderWidth: '1px'
+            }
+        }
     },
     productPage: {
         namePage: 'Страница блюда',
@@ -218,5 +234,222 @@ export default {
                 background: '#ffbdd3'
             }
         },
-    },
+        leftPanel: {
+            title: {
+                text: 'Доставка',
+                style: {
+                    color: '#000000',
+                    fontSize: '25px',
+                    left: '70px',
+                    top: '20px',
+                }
+            },
+            telephone: {
+                style: {
+                    left: '70px',
+                    top: '70px'
+                },
+                title: {
+                    text: 'Телефон',
+                    style: {
+                        color: '#000000',
+                        fontSize: '20px'
+                    }
+                },
+                input: {
+                    placeholder: 'телефон',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '40px',
+                        width: '420px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            },
+            address: {
+                text: 'Москва, 4-й Добрынинский переулок, 8',
+                style: {
+                    color: '#000000',
+                    fontSize: '22px',
+                    left: '70px',
+                    top: '190px',
+                }
+            },
+            entrance: {
+                style: {
+                    left: '70px',
+                    top: '255px'
+                },
+                title: {
+                    text: 'Подъезд',
+                    style: {
+                        color: '#000000',
+                        fontSize: '17px'
+                    }
+                },
+                input: {
+                    placeholder: 'подъезд',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '40px',
+                        width: '190px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            },
+            intercom: {
+                style: {
+                    left: '300px',
+                    top: '255px'
+                },
+                title: {
+                    text: 'Домофон',
+                    style: {
+                        color: '#000000',
+                        fontSize: '17px'
+                    }
+                },
+                input: {
+                    placeholder: 'код домофона',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '40px',
+                        width: '190px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            },
+            apartment: {
+                style: {
+                    left: '70px',
+                    top: '370px'
+                },
+                title: {
+                    text: 'Кв/Офис',
+                    style: {
+                        color: '#000000',
+                        fontSize: '17px'
+                    }
+                },
+                input: {
+                    placeholder: 'квартра или офис',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '40px',
+                        width: '190px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            },
+            floor: {
+                style: {
+                    left: '300px',
+                    top: '370px'
+                },
+                title: {
+                    text: 'Этаж',
+                    style: {
+                        color: '#000000',
+                        fontSize: '17px'
+                    }
+                },
+                input: {
+                    placeholder: 'этаж',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '40px',
+                        width: '190px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            },
+            pay: {
+                style: {
+                    color: '#000000',
+                    fontSize: '22px',
+                    left: '70px',
+                    top: '467px',
+                }
+            },
+            comment: {
+                style: {
+                    left: '70px',
+                    top: '520px'
+                },
+                title: {
+                    text: 'Комментарии к заказу',
+                    style: {
+                        color: '#000000',
+                        fontSize: '20px'
+                    }
+                },
+                input: {
+                    placeholder: 'комментрарии к заказу',
+                    style: {
+                        background: '#ffffff',
+                        color: '#000000',
+                        height: '80px',
+                        width: '420px',
+                        borderRadius: '10px',
+                        fontSize: '15px',
+                        borderWidth: '1px'
+                    }
+                }
+            }
+        },
+        rightPanel: {
+            style: {
+                background: '#ffb112'
+            },
+            textContainer: {
+                order: {
+                    style: {
+                        color: '#000fff',
+                        fontSize: '18px'
+                    }
+                },
+                delivery: {
+                    style: {
+                        color: '#000fff',
+                        fontSize: '18px'
+                    }
+                },
+                result: {
+                    style: {
+                        color: '#000fff',
+                        fontSize: '21px'
+                    }
+                }
+            },
+            buttonOK: {
+                text: 'Принять',
+                style: {
+                    background: '#97c62b',
+                    color: '#000533',
+                    height: '40px',
+                    width: '200px',
+                    borderRadius: '5px',
+                    left: '45px',
+                    top: '190px',
+                    fontSize: '15px',
+                    borderWidth: '0px'
+                }
+            }
+        }
+    }
 }

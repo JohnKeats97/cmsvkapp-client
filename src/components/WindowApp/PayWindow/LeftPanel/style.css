@@ -1,0 +1,11 @@
+.components-RightPanel-BodyRight-WindowApp-PayWindow-LeftPanel-root {
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 560px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-PayWindow-LeftPanel-text {
+    display: block;
+    position: absolute;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import AddressWindow from './AddressWindow'
-import MenuWindow from './MenuWindow'
-import LoadingWindow from './LoadingWindow'
-import ProductWindow from './ProductWindow'
-import BasketWindow from './BasketWindow'
-import PayWindow from './PayWindow'
+import AddressWindow from './AddressWindow/index'
+import MenuWindow from './MenuWindow/index'
+import LoadingWindow from './LoadingWindow/index'
+import ProductWindow from './ProductWindow/index'
+import BasketWindow from './BasketWindow/index'
+import PayWindow from './PayWindow/index'
 
 import cn from '../../utils/cn'
 

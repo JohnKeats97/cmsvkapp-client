@@ -22,4 +22,5 @@
 .components-RightPanel-BodyRight-WindowApp-AddressWindow-inputAddress {
     padding-left: 15px;
     position: absolute;
+    outline: none;
 }

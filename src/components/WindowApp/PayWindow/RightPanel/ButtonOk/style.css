@@ -1,0 +1,10 @@
+.components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-ButtonOk-root {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-left: 20px;
+}

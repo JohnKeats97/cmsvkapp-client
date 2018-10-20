@@ -1,7 +1,7 @@
 import React from 'react'
 
-import FoodContainer from "./FoodContainer";
-import TextContainer from "./TextContainer";
+import FoodContainer from "./FoodContainer/index";
+import TextContainer from "./TextContainer/index";
 
 import './style.css';
 

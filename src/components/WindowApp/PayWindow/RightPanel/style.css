@@ -1,0 +1,13 @@
+.components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-root {
+    position: absolute;
+    left: 560px;
+    height: 650px;
+    width: 290px;
+    display: block;
+}
+
+.components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-price {
+    position: relative;
+    display: block;
+    top: 20px;
+}
