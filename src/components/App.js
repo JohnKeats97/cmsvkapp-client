@@ -13,7 +13,7 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'basketPage'
+            page: 'loadingPage'
         };
 
         // для меню блюд
@@ -40,7 +40,6 @@ export default class Background extends React.Component {
 
     render () {
         const {state} = this;
-        console.log(state.pageConfig);
         return <div className='root'>
             <WindowApp
                 pageConfig={state.pageConfig}
