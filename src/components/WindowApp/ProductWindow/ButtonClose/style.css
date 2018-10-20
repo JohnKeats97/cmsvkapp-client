@@ -1,0 +1,10 @@
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-ButtonClose-root {
+    display: block;
+    position: absolute;
+    background: transparent url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1752px -220px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    width: 40px;
+    height: 40px;
+}

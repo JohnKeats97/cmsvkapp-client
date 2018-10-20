@@ -1,0 +1,40 @@
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-root {
+    display: block;
+    position: absolute;
+    font-size: 0;
+}
+
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e4e5e6;
+    cursor: pointer;
+    outline: none;
+}
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-button:hover {
+    border: 1px solid #bec8d2;
+}
+
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-minus {
+    background: #fff url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1913px -62px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-count {
+    border-top: 1px solid #e4e5e6;
+    border-bottom: 1px solid #e4e5e6;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #2e2e33;
+    box-sizing: border-box;
+    vertical-align: top;
+    outline: none;
+    border-left: 0;
+    border-right: 0;
+    /*font-family: OsnovaNormal,Helvetica,Arial,sans-serif;*/
+}
+
+.components-RightPanel-BodyRight-WindowApp-ProductWindow-InputCount-plus {
+    background: #fff url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1833px -62px;
+}

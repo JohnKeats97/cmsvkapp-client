@@ -1,0 +1,115 @@
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-root {
+    display: block;
+    position: relative;
+    height: 440px;
+    width: 400px;
+    overflow-y: auto;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-item {
+    padding: 16px;
+    position: relative;
+    font-size: 0;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 rgba(35,45,60,.13);
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-imgContainer {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-image {
+    max-width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-info {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 96px);
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-consist {
+    width: 100%;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-title {
+    width: calc(100% - 71px);
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2e2e33;
+    line-height: 1.33;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-cost {
+    display: inline-block;
+    vertical-align: top;
+    width: 55px;
+    margin-left: 16px;
+    font-size: 15px;
+    text-align: right;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-controls {
+    margin-top: 14px;
+    height: 32px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-quantity {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+    border-radius: 100px;
+    background-color: #919399;
+    color: #fff;
+    padding: 0 8px;
+    margin-right: 16px;
+    font-size: 13px;
+    line-height: 23px;
+    text-align: center;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: #f6f6f6;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-minus {
+    margin-right: 16px;
+    background: url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1916px -65px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-plus {
+    margin-right: 16px;
+    background: url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1836px -65px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-delete {
+    background: url(https://social-sites.delivery-club.ru/img/iconset.svg) no-repeat -1116px -65px;
+    float: right;
+}
