@@ -3,6 +3,7 @@
     display: block;
     position: absolute;
     width: 560px;
+    overflow-y: auto;
 }
 
 .components-RightPanel-BodyRight-WindowApp-PayWindow-LeftPanel-text {
