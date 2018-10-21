@@ -19,7 +19,7 @@ export default class LoadingWindow extends React.Component {
 
     render() {
         const {props} = this;
-        this.loadingData();
+        this.loadingData(); // сделать чтобы не при рендере а при запуске экрана
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-LoadingWindow-root"

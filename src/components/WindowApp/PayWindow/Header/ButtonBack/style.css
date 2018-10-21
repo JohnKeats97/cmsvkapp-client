@@ -1,0 +1,9 @@
+.components-RightPanel-BodyRight-WindowApp-PayWindow-Header-ButtonBack-root {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    margin: 8px 0 0 20px;
+}

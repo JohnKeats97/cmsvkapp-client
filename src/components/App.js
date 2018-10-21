@@ -13,7 +13,7 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'loadingPage'
+            page: 'payPage'
         };
 
         // для меню блюд

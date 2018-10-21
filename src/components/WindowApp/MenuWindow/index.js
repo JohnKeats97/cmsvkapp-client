@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Header from './Header';
+
 import './style.css';
 
 
@@ -39,6 +41,8 @@ export default (props) => {
         className="components-RightPanel-BodyRight-WindowApp-MenuWindow-root"
         style={props.pageConfig.background.style}
     >
+
+        <Header config={props.pageConfig.header} />
 
         <div
             className="components-RightPanel-BodyRight-WindowApp-MenuWindow-title"

@@ -1,0 +1,29 @@
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-root {
+    position: relative;
+    display: block;
+    height: 55px;
+    width: 100%;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-address {
+    position: absolute;
+    display: block;
+    left: 160px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-basket {
+    position: relative;
+    display: block;
+    height: 55px;
+    width: 220px;
+    float: right;
+    cursor: pointer;
+    line-height: 55px;
+    padding: 0 15px 0 20px;
+}
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-price {
+    position: relative;
+    display: block;
+    float: right;
+    font-size: 17px;
+}
