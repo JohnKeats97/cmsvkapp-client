@@ -12,6 +12,10 @@ export default class LoadingWindow extends React.Component {
     }
 
     loadingData() {
+        const {length} = document.querySelectorAll('.loadingPage .components-RightPanel-BodyRight-WindowApp-LoadingWindow-root');
+        if (!length) {
+            return;
+        }
         setTimeout(() => {
             this.props.onLoading('addressPage', {});
         }, 3000);
@@ -19,7 +23,9 @@ export default class LoadingWindow extends React.Component {
 
     render() {
         const {props} = this;
-        this.loadingData(); // сделать чтобы не при рендере а при запуске экрана
+        setTimeout(() => {
+            this.loadingData(); // сделать чтобы не при рендере а при запуске экрана
+        }, 0);
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-LoadingWindow-root"
