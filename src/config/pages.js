@@ -81,6 +81,35 @@ export default {
                 background: '#ffbdd3'
             }
         },
+        header: {
+            style: {
+                background: '#ffffff'
+            },
+            buttonback: {
+                text: 'Назад',
+                style: {
+                    background: '#abcd12',
+                    color: '#000000',
+                    borderRadius: '10px',
+                    borderWidth: '1px',
+                    fontSize: '17px'
+                }
+            },
+            address: {
+                style: {
+                    color: '#000000',
+                    fontSize: '20px',
+                    top: '15px'
+                }
+            },
+            basket: {
+                style: {
+                    background: '#123456',
+                    color: '#C5EFF4',
+                    fontSize: '17px'
+                }
+            }
+        },
         title: {
             style: {
                 color: '#000000',
@@ -232,6 +261,21 @@ export default {
         background: {
             style: {
                 background: '#ffbdd3'
+            }
+        },
+        header: {
+            style: {
+                background: '#ffffff'
+            },
+            buttonback: {
+                text: 'Назад',
+                style: {
+                    width: '100px',
+                    background: '#abcd12',
+                    color: '#000000',
+                    borderRadius: '10px',
+                    borderWidth: '1px'
+                }
             }
         },
         leftPanel: {
