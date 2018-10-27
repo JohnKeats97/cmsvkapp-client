@@ -4,15 +4,38 @@ import './style.css';
 import ProductContainer from "./ProductContainer";
 import ButtonOk from "./ButtonOk";
 
+export default class ProductWindow extends React.Component {
+    constructor() {
+        super();
+    }
 
-export default (props) => {
+    onClickBackground() {
+        this.props.onOpenNewPage('menuPage', {});
+    }
 
-    return <div
-        className="components-RightPanel-BodyRight-WindowApp-BasketWindow-root"
-        style={props.pageConfig.background.style} >
+    onClickButtonOk(e) {
+        e.stopPropagation();
+        this.props.onOpenNewPage('payPage', {});
+    }
 
-        <ProductContainer config={props.pageConfig} />
-        <ButtonOk config={props.pageConfig.buttonOK}/>
+    render() {
+        const {props} = this;
 
-    </div>
-};
+        return <div
+            className="components-RightPanel-BodyRight-WindowApp-BasketWindow-root"
+            style={props.pageConfig.background.style}
+            onClick={this.onClickBackground.bind(this)}
+        >
+
+            <ProductContainer
+                config={props.pageConfig}
+                onClick={(e)=>{e.stopPropagation()}}
+            />
+            <ButtonOk
+                config={props.pageConfig.buttonOK}
+                onClick={this.onClickButtonOk.bind(this)}
+            />
+
+        </div>
+    }
+}

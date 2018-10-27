@@ -1,0 +1,10 @@
+.components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-ButtonBack-root {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    margin: 8px 0 0 20px;
+}

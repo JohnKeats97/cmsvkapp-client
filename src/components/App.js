@@ -18,7 +18,7 @@ export default class Background extends React.Component {
         this.menu = {};
     }
 
-    onOpenNewPage (page, menu) {
+    onOpenNewPage (page, {menu = null, productInfo = null}) {
         if (!menu) {
             this.menu = menu;
         }

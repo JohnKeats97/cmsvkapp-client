@@ -1,19 +1,43 @@
 import React from 'react';
 
 import LeftPanel from './LeftPanel';
-import RightPanet from './RightPanel';
+import RightPanel from './RightPanel';
+import Header from './Header';
 
 import './style.css';
 
 
-export default (props) => {
+export default class PayWindow extends React.Component {
+    constructor() {
+        super();
+    }
 
-    return <div
-        className="components-RightPanel-BodyRight-WindowApp-PayWindow-root"
-        style={props.pageConfig.background.style} >
+    onClickBack() {
+        this.props.onOpenNewPage('basketPage', {});
+    }
 
-        <LeftPanel config={props.pageConfig.leftPanel}/>
-        <RightPanet config={props.pageConfig.rightPanel}/>
+    onClickOk() {
+        alert('Ваша покупка совершена');
+        this.props.onOpenNewPage('menuPage', {});
+    }
 
-    </div>
+    render() {
+        const {props} = this;
+
+        return <div
+            className="components-RightPanel-BodyRight-WindowApp-PayWindow-root"
+            style={props.pageConfig.background.style} >
+
+            <Header
+                config={props.pageConfig.header}
+                onClickBack={this.onClickBack.bind(this)}
+            />
+            <LeftPanel config={props.pageConfig.leftPanel}/>
+            <RightPanel
+                config={props.pageConfig.rightPanel}
+                onClickOk={this.onClickOk.bind(this)}
+            />
+
+        </div>
+    }
 };
