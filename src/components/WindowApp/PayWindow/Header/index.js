@@ -9,6 +9,9 @@ export default (props) => {
         className="components-RightPanel-BodyRight-WindowApp-PayWindow-Header-root"
         style={props.config.style}
         >
-        <ButtonBack config={props.config.buttonback}/>
+        <ButtonBack
+            config={props.config.buttonback}
+            onClick={props.onClickBack}
+        />
     </div>
 };

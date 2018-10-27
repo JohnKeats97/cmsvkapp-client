@@ -8,6 +8,7 @@ export default (props) => {
     return <button
         className="components-RightPanel-BodyRight-WindowApp-ProductWindow-ButtonClose-root"
         style={props.config.style}
+        onClick={props.onClick}
     >
     </button>
 };

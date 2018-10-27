@@ -1,57 +1,65 @@
 import React from 'react'
 
 import Header from './Header';
+import Dish from './Dish'
 
 import './style.css';
 
 
-export default (props) => {
-
-    let list = [];
-
-    for (let i = 0; i < 10; i++) {
-        list.push(<div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item">
-            <div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-link">
-                <div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-info">
-                    <div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-title">
-                        Салат цезарь с курицей
-                    </div>
-                    <div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-decs">
-                        Салат айсберг, куриные грудки, сыр пармезан, помидоры черри, соус цезарь.
-                    </div>
-                    <div className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-price">
-                        260 Р
-                    </div>
-                </div>
-                <img
-                    className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-photo"
-                    src="https://www.delivery-club.ru//media/cms/relation_product/77/301617448_f.jpg"
-                />
-            </div>
-            <button
-                className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item-button"
-                style={props.pageConfig.buttonOk.style}
-            >
-                {props.pageConfig.buttonOk.text}
-            </button>
-        </div>);
+export default class MenuWindow extends React.Component {
+    constructor() {
+        super();
     }
 
-    return <div
-        className="components-RightPanel-BodyRight-WindowApp-MenuWindow-root"
-        style={props.pageConfig.background.style}
-    >
+    onClickBack() {
+        this.props.onOpenNewPage('addressPage', {});
+    }
 
-        <Header config={props.pageConfig.header} />
+    onClickBasket() {
+        this.props.onOpenNewPage('basketPage', {});
+    }
 
-        <div
-            className="components-RightPanel-BodyRight-WindowApp-MenuWindow-title"
-            style={props.pageConfig.title.style}
-        >Популярные</div>
+    onClickProduct() {
+        this.props.onOpenNewPage('productPage', {productInfo: {}});
+    }
 
-        {list}
+    onAddProduct(e) {
+        e.stopPropagation();
+        // добавить продукт в корзину
+    }
 
-    </div>
+    render() {
+        const {props} = this;
+
+        let list = [];
+
+        for (let i = 0; i < 10; i++) {
+            list.push(<Dish
+                pageConfig={props.pageConfig}
+                onClickProduct={this.onClickProduct.bind(this)}
+                onAddProduct={this.onAddProduct}
+            />);
+        }
+
+        return <div
+            className="components-RightPanel-BodyRight-WindowApp-MenuWindow-root"
+            style={props.pageConfig.background.style}
+        >
+
+            <Header
+                config={props.pageConfig.header}
+                onClickBack={this.onClickBack.bind(this)}
+                onClickBasket={this.onClickBasket.bind(this)}
+            />
+
+            <div
+                className="components-RightPanel-BodyRight-WindowApp-MenuWindow-title"
+                style={props.pageConfig.title.style}
+            >Популярные</div>
+
+            {list}
+
+        </div>
+    }
 };
-
 

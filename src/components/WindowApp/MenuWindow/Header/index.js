@@ -9,7 +9,10 @@ export default (props) => {
         className="components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-root"
         style={props.config.style}
         >
-        <ButtonBack config={props.config.buttonback}/>
+        <ButtonBack
+            config={props.config.buttonback}
+            onClick={props.onClickBack}
+        />
         <div
             className="components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-address"
             style={props.config.address.style}
@@ -20,6 +23,7 @@ export default (props) => {
         <div
             className="components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-basket"
             style={props.config.basket.style}
+            onClick={props.onClickBasket}
         >
             Корзина
             <div

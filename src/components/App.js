@@ -13,24 +13,24 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'payPage'
+            page: 'loadingPage'
         };
 
         // для меню блюд
         this.menu = {};
 
-        Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
-            .then(response => {
-                if (response) {
-                    this.setState((state)=>{
-                        state.pageConfig = response;
-                        return state;
-                    });
-                }
-            });
+        // Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
+        //     .then(response => {
+        //         if (response) {
+        //             this.setState((state)=>{
+        //                 state.pageConfig = response;
+        //                 return state;
+        //             });
+        //         }
+        //     });
     }
 
-    onOpenNewPage (page, menu) {
+    onOpenNewPage (page, {menu = null, productInfo = null}) {
         if (!menu) {
             this.menu = menu;
         }

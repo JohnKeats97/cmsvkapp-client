@@ -12,6 +12,9 @@ export default (props) => {
         <div className="components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-price">
             <TextContainer config={props.config.textContainer} />
         </div>
-        <ButtonOk config={props.config.buttonOK}/>
+        <ButtonOk
+            config={props.config.buttonOK}
+            onClick={props.onClickOk}
+        />
     </div>
 };
