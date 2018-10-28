@@ -1,4 +1,5 @@
 import os
+from requests import get
 
 with open ('index.html', 'r') as f:
     old_data = f.read()
@@ -21,3 +22,7 @@ with open ('webpack.config.js', 'w') as f:
     f.write(new_data)
 
 print("webpack.config change")
+
+url = "http://localhost:5000/appsStarted?app_name=" + os.getenv("APP_NAME") + "&server_key=" + os.getenv("SERVER_KEY")
+
+get(url)
