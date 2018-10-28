@@ -31,7 +31,7 @@ export default class Background extends React.Component {
     }
 
     onOpenNewPage (page, {menu = null, productInfo = null}) {
-        if (!menu) {
+        if (menu) {
             this.menu = menu;
         }
 
@@ -45,6 +45,7 @@ export default class Background extends React.Component {
                 pageConfig={state.pageConfig}
                 page={state.page}
                 onOpenNewPage={this.onOpenNewPage.bind(this)}
+                menu={this.menu}
             />
         </div>
     }

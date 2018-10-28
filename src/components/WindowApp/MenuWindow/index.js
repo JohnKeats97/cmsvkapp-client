@@ -28,18 +28,40 @@ export default class MenuWindow extends React.Component {
         // добавить продукт в корзину
     }
 
-    render() {
+    getProducts() {
         const {props} = this;
+        const {menu} = props;
+
+        const titles = Object.keys(menu);
 
         let list = [];
 
-        for (let i = 0; i < 10; i++) {
-            list.push(<Dish
-                pageConfig={props.pageConfig}
-                onClickProduct={this.onClickProduct.bind(this)}
-                onAddProduct={this.onAddProduct}
-            />);
+        if (!titles.length) {
+            return list;
         }
+
+        for (let i = 0; i < titles.length; i++) {
+            list.push(<div
+                className="components-RightPanel-BodyRight-WindowApp-MenuWindow-title"
+                style={props.pageConfig.title.style}
+            >{titles[i]}</div>)
+            for (let menuItemKey in menu[titles[i]]) {
+                list.push(<Dish
+                    pageConfig={props.pageConfig}
+                    onClickProduct={this.onClickProduct.bind(this)}
+                    onAddProduct={this.onAddProduct}
+                    menuItem={menu[titles[i]][menuItemKey]}
+                />);
+            }
+        }
+
+        return list;
+    }
+
+    render() {
+        const {props} = this;
+
+        let list = this.getProducts();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-MenuWindow-root"
@@ -51,11 +73,6 @@ export default class MenuWindow extends React.Component {
                 onClickBack={this.onClickBack.bind(this)}
                 onClickBasket={this.onClickBasket.bind(this)}
             />
-
-            <div
-                className="components-RightPanel-BodyRight-WindowApp-MenuWindow-title"
-                style={props.pageConfig.title.style}
-            >Популярные</div>
 
             {list}
 

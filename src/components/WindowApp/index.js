@@ -27,6 +27,7 @@ export default (props) => {
         <MenuWindow
             pageConfig={props.pageConfig.menuPage}
             onOpenNewPage={props.onOpenNewPage}
+            menu={props.menu}
         />
         <ProductWindow
             pageConfig={props.pageConfig.productPage}
