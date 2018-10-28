@@ -11,7 +11,7 @@ export default (props) => {
     >
         <img
             className="components-RightPanel-BodyRight-WindowApp-ProductWindow-ImageContainer-image"
-            src={props.config.image.src}
+            src={props.src}
         />
     </div>
 };

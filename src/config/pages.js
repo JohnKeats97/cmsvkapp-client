@@ -172,7 +172,7 @@ export default {
             text: 'Кинг Наггетс (станд.)',
             style: {
                 color: '#000000',
-                fontSize: '25px',
+                fontSize: '23px',
                 left: '270px',
                 top: '250px',
                 width: '270px'

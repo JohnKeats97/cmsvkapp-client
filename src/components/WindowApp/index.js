@@ -32,6 +32,7 @@ export default (props) => {
         <ProductWindow
             pageConfig={props.pageConfig.productPage}
             onOpenNewPage={props.onOpenNewPage}
+            productInfo={props.productInfo}
         />
         <BasketWindow
             pageConfig={props.pageConfig.basketPage}

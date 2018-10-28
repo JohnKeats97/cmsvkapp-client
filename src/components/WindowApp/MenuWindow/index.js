@@ -19,10 +19,6 @@ export default class MenuWindow extends React.Component {
         this.props.onOpenNewPage('basketPage', {});
     }
 
-    onClickProduct() {
-        this.props.onOpenNewPage('productPage', {productInfo: {}});
-    }
-
     onAddProduct(e) {
         e.stopPropagation();
         // добавить продукт в корзину
@@ -47,8 +43,8 @@ export default class MenuWindow extends React.Component {
             >{titles[i]}</div>)
             for (let menuItemKey in menu[titles[i]]) {
                 list.push(<Dish
+                    onOpenNewPage={props.onOpenNewPage}
                     pageConfig={props.pageConfig}
-                    onClickProduct={this.onClickProduct.bind(this)}
                     onAddProduct={this.onAddProduct}
                     menuItem={menu[titles[i]][menuItemKey]}
                 />);

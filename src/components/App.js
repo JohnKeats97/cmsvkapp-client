@@ -19,6 +19,9 @@ export default class Background extends React.Component {
         // для меню блюд
         this.menu = {};
 
+        // описание выбранного блюда
+        this.productInfo = {};
+
         // Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
         //     .then(response => {
         //         if (response) {
@@ -34,6 +37,9 @@ export default class Background extends React.Component {
         if (menu) {
             this.menu = menu;
         }
+        if (productInfo) {
+            this.productInfo = productInfo;
+        }
 
         this.setState((state)=>(state.page = page, state));
     }
@@ -46,6 +52,7 @@ export default class Background extends React.Component {
                 page={state.page}
                 onOpenNewPage={this.onOpenNewPage.bind(this)}
                 menu={this.menu}
+                productInfo={this.productInfo}
             />
         </div>
     }

@@ -25,6 +25,7 @@ export default class ProductWindow extends React.Component {
 
     render() {
         const {props} = this;
+        const {productInfo} = props;
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-ProductWindow-root"
@@ -34,23 +35,27 @@ export default class ProductWindow extends React.Component {
                 onClick={this.onClickButtonClose.bind(this)}
             />
             <ProductContainer config={props.pageConfig.productContainer} />
-            <ImageContainer config={props.pageConfig.imageContainer} />
+            <ImageContainer
+                config={props.pageConfig.imageContainer}
+                src={productInfo.image && `https://www.delivery-club.ru/${productInfo.image[650]}` || props.pageConfig.imageContainer.image.src}
+            />
             <div
                 className="components-RightPanel-BodyRight-WindowApp-ProductWindow-title"
                 style={props.pageConfig.title.style}
             >
-                {props.pageConfig.title.text}
+                {productInfo.title}
             </div>
             <div
                 className="components-RightPanel-BodyRight-WindowApp-ProductWindow-description"
                 style={props.pageConfig.description.style}
             >
-                {props.pageConfig.description.text}
+                {productInfo.description}
             </div>
             <InputCount config={props.pageConfig.inputCount}/>
             <ButtonOk
                 config={props.pageConfig.buttonOK}
                 onClick={this.onClickButtonOk.bind(this)}
+                price={productInfo.price}
             />
         </div>
     }
