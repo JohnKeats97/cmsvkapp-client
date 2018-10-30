@@ -22,7 +22,7 @@ export default class Background extends React.Component {
         // описание выбранного блюда
         this.productInfo = {};
 
-        // Fetch.Get('https://cmsvkapp.herokuapp.com/api/apps/test/config')
+        // Fetch.Get('https:/cmsvkapp.herokuapp.com/api/apps/test/config')
         //     .then(response => {
         //         if (response) {
         //             this.setState((state)=>{
