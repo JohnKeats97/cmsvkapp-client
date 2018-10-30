@@ -23,6 +23,3 @@ with open ('webpack.config.js', 'w') as f:
 
 print("webpack.config change")
 
-url = "http://localhost:5000/appsStarted?app_name=" + os.getenv("APP_NAME") + "&server_key=" + os.getenv("SERVER_KEY")
-
-get(url)
