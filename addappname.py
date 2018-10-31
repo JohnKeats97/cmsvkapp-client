@@ -1,5 +1,4 @@
 import os
-from requests import get
 
 with open ('index.html', 'r') as f:
     old_data = f.read()
