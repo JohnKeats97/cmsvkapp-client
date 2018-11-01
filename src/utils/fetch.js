@@ -12,13 +12,12 @@ export default class Fetch
      * @param {string} url - адрес запроса
      * @return {Promise}
      */
-    static Get(url, headers={})
+    static Get(url)
     {
         return fetch(url,
             {
                 method: 'GET',
-                mode: 'cors',
-                headers
+                mode: 'cors'
             })
             .then(function (response)
             {
