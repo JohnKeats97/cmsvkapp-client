@@ -13,14 +13,23 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'payPage'
+            page: 'loadingPage'
         };
+
+        // для меню блюд
         this.menu = {};
+
+        // описание выбранного блюда
+        this.productInfo = {};
+
     }
 
     onOpenNewPage (page, {menu = null, productInfo = null}) {
-        if (!menu) {
+        if (menu) {
             this.menu = menu;
+        }
+        if (productInfo) {
+            this.productInfo = productInfo;
         }
 
         this.setState((state)=>(state.page = page, state));
@@ -33,6 +42,8 @@ export default class Background extends React.Component {
                 pageConfig={state.pageConfig}
                 page={state.page}
                 onOpenNewPage={this.onOpenNewPage.bind(this)}
+                menu={this.menu}
+                productInfo={this.productInfo}
             />
         </div>
     }

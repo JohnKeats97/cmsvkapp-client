@@ -3,6 +3,7 @@
     display: none;
     position: relative;
     overflow-y: auto;
+    padding-bottom: 17px;
 }
 
 .menuPage .components-RightPanel-BodyRight-WindowApp-MenuWindow-root {

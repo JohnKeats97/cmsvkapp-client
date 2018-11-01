@@ -27,10 +27,12 @@ export default (props) => {
         <MenuWindow
             pageConfig={props.pageConfig.menuPage}
             onOpenNewPage={props.onOpenNewPage}
+            menu={props.menu}
         />
         <ProductWindow
             pageConfig={props.pageConfig.productPage}
             onOpenNewPage={props.onOpenNewPage}
+            productInfo={props.productInfo}
         />
         <BasketWindow
             pageConfig={props.pageConfig.basketPage}

@@ -12,7 +12,7 @@ export default (props) => {
     >
         {props.config.text}
         <span className="components-RightPanel-BodyRight-WindowApp-ProductWindow-ButtonOk-price">
-            100 pуб
+            {props.price} pуб
         </span>
     </button>
 };
