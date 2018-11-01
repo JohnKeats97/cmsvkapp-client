@@ -17,7 +17,7 @@ export default class Fetch
         return fetch(url,
             {
                 method: 'GET',
-                mode: 'cors',
+                mode: 'cors'
             })
             .then(function (response)
             {
