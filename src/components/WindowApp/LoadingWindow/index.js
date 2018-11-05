@@ -17,7 +17,7 @@ export default class LoadingWindow extends React.Component {
             return;
         }
         let myMenu = {};
-        Fetch.Get('http://ec2-13-58-118-146.us-east-2.compute.amazonaws.com/service/10000/menu/?data=menu')
+        Fetch.Get('https://midserver.site/service/10000/menu/?data=menu')
             .then(({response}) => {
                 const {menu} = response;
                 for (let i = 0; i < menu.length; i++) {
@@ -27,7 +27,7 @@ export default class LoadingWindow extends React.Component {
                     }
                     myMenu[menu[i].title] = cat;
                 }
-                Fetch.Get('http://ec2-13-58-118-146.us-east-2.compute.amazonaws.com/service/10000/menu/?data=products')
+                Fetch.Get('https://midserver.site/service/10000/menu/?data=products')
                     .then(({response})=>{
                         const myProduct = {};
                         const {products} = response;
