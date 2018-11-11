@@ -1,12 +1,18 @@
 import React from 'react'
 
-import './style.css';
 import ProductContainer from "./ProductContainer";
 import ButtonOk from "./ButtonOk";
+import Basket from '../../../utils/basket';
+
+import './style.css';
+
 
 export default class ProductWindow extends React.Component {
     constructor() {
         super();
+        this.state = {
+            basket: Basket.get()
+        }
     }
 
     onClickBackground() {
@@ -19,7 +25,7 @@ export default class ProductWindow extends React.Component {
     }
 
     render() {
-        const {props} = this;
+        const {props, state} = this;
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-BasketWindow-root"
@@ -30,10 +36,12 @@ export default class ProductWindow extends React.Component {
             <ProductContainer
                 config={props.pageConfig}
                 onClick={(e)=>{e.stopPropagation()}}
+                basket={state.basket}
             />
             <ButtonOk
                 config={props.pageConfig.buttonOK}
                 onClick={this.onClickButtonOk.bind(this)}
+                price={state.basket.price}
             />
 
         </div>

@@ -23,7 +23,7 @@ export default (props) => {
             className="components-RightPanel-BodyRight-WindowApp-PayWindow-LeftPanel-text"
             style={props.config.address.style}
         >
-            {props.config.address.text}
+            {props.userAddress}
         </div>
         <InputContainer
             config={props.config.entrance}

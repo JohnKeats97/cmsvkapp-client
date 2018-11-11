@@ -1,7 +1,8 @@
 import React from 'react'
 
-import './style.css';
 import ButtonBack from "./ButtonBack";
+
+import './style.css';
 
 
 export default (props) => {
@@ -17,7 +18,7 @@ export default (props) => {
             className="components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-address"
             style={props.config.address.style}
         >
-            Москва, 4-й Добрынинский переулок, 8
+            {props.userAddress}
         </div>
 
         <div
@@ -29,7 +30,7 @@ export default (props) => {
             <div
                 className="components-RightPanel-BodyRight-WindowApp-MenuWindow-Header-price"
             >
-                2320 Р
+                {props.price} Р
             </div>
         </div>
 

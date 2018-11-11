@@ -16,35 +16,54 @@ export default class LoadingWindow extends React.Component {
         if (!length) {
             return;
         }
-        let myMenu = {};
-        Fetch.Get('https://midserver.site/service/10000/menu/?data=menu')
-            .then(({response}) => {
-                const {menu} = response;
-                for (let i = 0; i < menu.length; i++) {
-                    let cat = {};
-                    for (let j = 0; j < menu[i].product_ids.length; j++) {
-                        cat[menu[i].product_ids[j]] = {};
-                    }
-                    myMenu[menu[i].title] = cat;
-                }
-                Fetch.Get('https://midserver.site/service/10000/menu/?data=products')
-                        .then(({response})=>{
-                            const myProduct = {};
-                            const {products} = response;
-                            for (let i = 0; i < products.length; i++) {
-                                myProduct[products[i].id] = products[i];
-                            }
 
-                            const OKmyMenu = Object.keys(myMenu)
-                            for (let i = 0; i < OKmyMenu.length; i++) {
-                                const cat = Object.keys(myMenu[OKmyMenu[i]]);
-                                for (let j = 0; j < cat.length; j++) {
-                                    myMenu[OKmyMenu[i]][cat[j]] = myProduct[cat[j]];
+        Fetch.Get(`/geo_decode/?q=${this.props.userAddress}`)
+            .then(({response})=>{
+                if(!response.success) {
+                    this.props.onLoading('addressPage', {});
+                    alert(response.error.message);
+                    return;
+                }
+                Fetch.Get(`/services/info/?service_id=16277&lat=${response.pos.lat}&long=${response.pos.long}`)
+                    .then((response)=>{
+                        if(response.errortext) {
+                            this.props.onLoading('addressPage', {});
+                            alert('Ресторан не поддерживает доставку по вашему адресу');
+                            return;
+                        }
+                        const idBranch = response.response.service.id;
+
+                        let myMenu = {};
+                        Fetch.Get('/service/10000/menu/?data=menu')
+                            .then(({response}) => {
+                                const {menu} = response;
+                                for (let i = 0; i < menu.length; i++) {
+                                    let cat = {};
+                                    for (let j = 0; j < menu[i].product_ids.length; j++) {
+                                        cat[menu[i].product_ids[j]] = {};
+                                    }
+                                    myMenu[menu[i].title] = cat;
                                 }
-                            }
-                            this.props.onLoading('addressPage', {menu: myMenu});
-                        })
-            })
+                                Fetch.Get('/service/10000/menu/?data=products')
+                                    .then(({response})=>{
+                                        const myProduct = {};
+                                        const {products} = response;
+                                        for (let i = 0; i < products.length; i++) {
+                                            myProduct[products[i].id] = products[i];
+                                        }
+
+                                        const OKmyMenu = Object.keys(myMenu);
+                                        for (let i = 0; i < OKmyMenu.length; i++) {
+                                            const cat = Object.keys(myMenu[OKmyMenu[i]]);
+                                            for (let j = 0; j < cat.length; j++) {
+                                                myMenu[OKmyMenu[i]][cat[j]] = myProduct[cat[j]];
+                                            }
+                                        }
+                                        this.props.onLoading('menuPage', {menu: myMenu, id: idBranch});
+                                    })
+                            })
+                    });
+            });
     }
 
     render() {

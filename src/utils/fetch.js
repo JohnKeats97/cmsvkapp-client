@@ -4,6 +4,8 @@
  * Модуль, предоставляющий методы для выполнения HTTP-запросов
  * @module Fetch
  */
+const baseURL = 'http://127.0.0.1:5000';
+
 
 export default class Fetch
 {
@@ -14,7 +16,7 @@ export default class Fetch
      */
     static Get(url)
     {
-        return fetch(url,
+        return fetch(baseURL + url,
             {
                 method: 'GET',
                 mode: 'cors'
@@ -36,7 +38,7 @@ export default class Fetch
      */
     static Post(url, body)
     {
-        return fetch(url,
+        return fetch(baseURL + url,
             {
                 method: 'POST',
                 mode: 'cors',

@@ -13,8 +13,11 @@ export default class Background extends React.Component {
         super();
         this.state = {
             pageConfig: pageConfig,
-            page: 'loadingPage'
+            page: 'addressPage'
         };
+
+        // введенный адрес
+        this.userAddress = '';
 
         // для меню блюд
         this.menu = {};
@@ -22,23 +25,21 @@ export default class Background extends React.Component {
         // описание выбранного блюда
         this.productInfo = {};
 
-        // Fetch.Get('https:/cmsvkapp.herokuapp.com/api/apps/test/config')
-        //     .then(response => {
-        //         if (response) {
-        //             this.setState((state)=>{
-        //                 state.pageConfig = response;
-        //                 return state;
-        //             });
-        //         }
-        //     });
+        this.idBranch = null;
     }
 
-    onOpenNewPage (page, {menu = null, productInfo = null}) {
+    onOpenNewPage (page, {menu = null, productInfo = null, address = null, id = null}) {
         if (menu) {
             this.menu = menu;
         }
         if (productInfo) {
             this.productInfo = productInfo;
+        }
+        if (address) {
+            this.userAddress = address;
+        }
+        if(id) {
+            this.idBranch = id;
         }
 
         this.setState((state)=>(state.page = page, state));
@@ -53,6 +54,7 @@ export default class Background extends React.Component {
                 onOpenNewPage={this.onOpenNewPage.bind(this)}
                 menu={this.menu}
                 productInfo={this.productInfo}
+                userAddress={this.userAddress}
             />
         </div>
     }

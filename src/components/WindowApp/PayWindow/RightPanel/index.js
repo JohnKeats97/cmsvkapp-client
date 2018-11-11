@@ -10,7 +10,10 @@ export default (props) => {
         className="components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-root"
         style={props.config.style} >
         <div className="components-RightPanel-BodyRight-WindowApp-PayWindow-RightPanel-price">
-            <TextContainer config={props.config.textContainer} />
+            <TextContainer
+                config={props.config.textContainer}
+                basket={props.basket}
+            />
         </div>
         <ButtonOk
             config={props.config.buttonOK}

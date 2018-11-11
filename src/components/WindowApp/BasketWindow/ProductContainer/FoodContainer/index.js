@@ -6,29 +6,30 @@ import './style.css';
 export default (props) => {
     let listFood = [];
 
-    const urlImg = 'https://diabet-expert.com/wp-content/uploads/2017/12/regulyarnoe-upotreblenie-fruktov-v-pischu-ukreplya-480x320.jpg';
+    const {products} = props.basket;
+    const productsId = Object.keys(products);
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < productsId.length; i++) {
         listFood.push(<div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-list">
             <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-item">
                 <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-imgContainer">
                     <img
                         className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-image"
-                        src={urlImg}
+                        src={`https://www.delivery-club.ru/${products[productsId[i]].image[200]}`}
                     />
                 </div>
                 <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-info">
                     <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-consist">
                         <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-title">
-                            Клаб-сэндвич 300 г
+                            {products[productsId[i]].title}
                         </div>
                         <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-cost">
-                            2010 Р
+                            {products[productsId[i]].count * products[productsId[i]].price} Р
                         </div>
                     </div>
                     <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-controls">
                         <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-quantity">
-                            5
+                            {products[productsId[i]].count}
                         </div>
                         <button className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-minus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button" />
                         <button className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-plus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button" />
