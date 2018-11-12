@@ -24,3 +24,17 @@
     position: absolute;
     outline: none;
 }
+
+.components-RightPanel-BodyRight-WindowApp-AddressWindow-listStyle {
+    position: absolute;
+    display: block;
+    padding: 8px 15px;
+}
+
+.components-RightPanel-BodyRight-WindowApp-AddressWindow-itemStyle {
+    display: block;
+    position: relative;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+}
+

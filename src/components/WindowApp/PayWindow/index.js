@@ -3,6 +3,7 @@ import React from 'react';
 import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import Header from './Header';
+import Basket from '../../../utils/basket';
 
 import './style.css';
 
@@ -10,6 +11,9 @@ import './style.css';
 export default class PayWindow extends React.Component {
     constructor() {
         super();
+        this.state = {
+            basket: Basket.get()
+        }
     }
 
     onClickBack() {
@@ -21,8 +25,18 @@ export default class PayWindow extends React.Component {
         this.props.onOpenNewPage('menuPage', {});
     }
 
+    newBasket() {
+        const basket = Basket.get();
+        if (JSON.stringify(this.state.basket) === JSON.stringify(basket)) {
+            return;
+        }
+        this.setState((state) => (state.basket = basket, state))
+    }
+
     render() {
-        const {props} = this;
+        const {props, state} = this;
+
+        this.newBasket();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-PayWindow-root"
@@ -32,8 +46,12 @@ export default class PayWindow extends React.Component {
                 config={props.pageConfig.header}
                 onClickBack={this.onClickBack.bind(this)}
             />
-            <LeftPanel config={props.pageConfig.leftPanel}/>
+            <LeftPanel
+                config={props.pageConfig.leftPanel}
+                userAddress={props.userAddress}
+            />
             <RightPanel
+                basket={state.basket}
                 config={props.pageConfig.rightPanel}
                 onClickOk={this.onClickOk.bind(this)}
             />

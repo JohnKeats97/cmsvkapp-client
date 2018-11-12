@@ -1,7 +1,8 @@
 import React from 'react'
 
 import Header from './Header';
-import Dish from './Dish'
+import Dish from './Dish';
+import Basket from '../../../utils/basket'
 
 import './style.css';
 
@@ -9,6 +10,10 @@ import './style.css';
 export default class MenuWindow extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            price: Basket.get().price
+        }
     }
 
     onClickBack() {
@@ -21,7 +26,16 @@ export default class MenuWindow extends React.Component {
 
     onAddProduct(e) {
         e.stopPropagation();
-        // добавить продукт в корзину
+        Basket.addProduct(this.item);
+        this.this2.setState(state => (state.price = Basket.get().price, state))
+    }
+
+    getPrice() {
+        const {price} = Basket.get();
+        if (price === this.state.price) {
+            return;
+        }
+        this.setState((state) => (state.price = price, state))
     }
 
     getProducts() {
@@ -45,7 +59,7 @@ export default class MenuWindow extends React.Component {
                 list.push(<Dish
                     onOpenNewPage={props.onOpenNewPage}
                     pageConfig={props.pageConfig}
-                    onAddProduct={this.onAddProduct}
+                    onAddProduct={this.onAddProduct.bind({this2: this, item: menu[titles[i]][menuItemKey]})}
                     menuItem={menu[titles[i]][menuItemKey]}
                 />);
             }
@@ -57,6 +71,8 @@ export default class MenuWindow extends React.Component {
     render() {
         const {props} = this;
 
+        this.getPrice();
+
         let list = this.getProducts();
 
         return <div
@@ -65,9 +81,11 @@ export default class MenuWindow extends React.Component {
         >
 
             <Header
+                userAddress={props.userAddress}
                 config={props.pageConfig.header}
                 onClickBack={this.onClickBack.bind(this)}
                 onClickBasket={this.onClickBasket.bind(this)}
+                price={this.state.price}
             />
 
             {list}

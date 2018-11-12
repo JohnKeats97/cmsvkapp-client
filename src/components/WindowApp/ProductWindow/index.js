@@ -5,6 +5,7 @@ import ImageContainer from './ImageContainer/index'
 import ButtonClose from './ButtonClose/index'
 import InputCount from './InputCount/index'
 import ButtonOk from './ButtonOk/index'
+import Basket from '../../../utils/basket'
 
 import './style.css';
 
@@ -12,6 +13,19 @@ import './style.css';
 export default class ProductWindow extends React.Component {
     constructor() {
         super();
+        this.state = {
+            count: 1
+        }
+    }
+
+    onChangeCount(change) {
+        this.setState((state) => {
+            state.count += change;
+            if (state.count < 1) {
+                state.count = 1;
+            }
+            return state;
+        });
     }
 
     onClickButtonClose () {
@@ -19,12 +33,12 @@ export default class ProductWindow extends React.Component {
     }
 
     onClickButtonOk () {
-        // добавить в корзину
-        this.onClickButtonClose()
+        Basket.addProduct(this.productInfo, this.this2.state.count);
+        this.this2.onClickButtonClose()
     }
 
     render() {
-        const {props} = this;
+        const {props, state} = this;
         const {productInfo} = props;
 
         return <div
@@ -51,11 +65,15 @@ export default class ProductWindow extends React.Component {
             >
                 {productInfo.description}
             </div>
-            <InputCount config={props.pageConfig.inputCount}/>
+            <InputCount
+                count={state.count}
+                onChangeCount={this.onChangeCount.bind(this)}
+                config={props.pageConfig.inputCount}
+            />
             <ButtonOk
                 config={props.pageConfig.buttonOK}
-                onClick={this.onClickButtonOk.bind(this)}
-                price={productInfo.price}
+                onClick={this.onClickButtonOk.bind({this2: this, productInfo})}
+                price={+productInfo.price * state.count}
             />
         </div>
     }

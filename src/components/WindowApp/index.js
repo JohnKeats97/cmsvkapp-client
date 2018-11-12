@@ -17,6 +17,7 @@ export default (props) => {
         className={cn("components-RightPanel-BodyRight-WindowApp-root", props.className, props.page)}
     >
         <LoadingWindow
+            userAddress={props.userAddress}
             pageConfig={props.pageConfig.loadingPage}
             onLoading={props.onOpenNewPage}
         />
@@ -25,6 +26,7 @@ export default (props) => {
             onOpenNewPage={props.onOpenNewPage}
         />
         <MenuWindow
+            userAddress={props.userAddress}
             pageConfig={props.pageConfig.menuPage}
             onOpenNewPage={props.onOpenNewPage}
             menu={props.menu}
@@ -39,6 +41,7 @@ export default (props) => {
             onOpenNewPage={props.onOpenNewPage}
         />
         <PayWindow
+            userAddress={props.userAddress}
             pageConfig={props.pageConfig.payPage}
             onOpenNewPage={props.onOpenNewPage}
         />
