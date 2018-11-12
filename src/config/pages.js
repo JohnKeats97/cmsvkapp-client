@@ -3,7 +3,8 @@ export default {
         namePage: 'Страница загрузки',
         background: {
             style: {
-                background: '#ffbdd2'
+                background: 'url(https://w-dog.ru/wallpapers/1/56/426506910763032.jpg)',
+                backgroundSize: 'cover'
             }
         },
         title: {
@@ -23,6 +24,7 @@ export default {
             circle: {
                 style: {
                     background: '#000fff',
+                    backgroundSize: 'cover',
                     width: '26px',
                     height: '26px'
                 }
@@ -42,13 +44,15 @@ export default {
         },
         background: {
             style: {
-                background: '#ffbdd3'
+                background: 'url(https://w-dog.ru/wallpapers/1/6/306574654894781.jpg)',
+                backgroundSize: 'cover'
             }
         },
         buttonOK: {
             text: 'Принять',
             style: {
                 background: '#ffbd00',
+                backgroundSize: 'cover',
                 color: '#ff0d00',
                 height: '50px',
                 width: '100px',
@@ -63,6 +67,7 @@ export default {
             placeholder: 'Адрес доставки...',
             style: {
                 background: '#ffffff',
+                backgroundSize: 'cover',
                 color: '#000000',
                 height: '50px',
                 width: '390px',
@@ -78,17 +83,20 @@ export default {
         namePage: 'Меню',
         background: {
             style: {
-                background: '#ffbdd3'
+                background: '#ffffff',
+                backgroundSize: 'cover'
             }
         },
         header: {
             style: {
-                background: '#ffffff'
+                background: '#ffff1123',
+                backgroundSize: 'cover'
             },
             buttonback: {
                 text: 'Назад',
                 style: {
                     background: '#abcd12',
+                    backgroundSize: 'cover',
                     color: '#000000',
                     borderRadius: '10px',
                     borderWidth: '1px',
@@ -105,6 +113,7 @@ export default {
             basket: {
                 style: {
                     background: '#123456',
+                    backgroundSize: 'cover',
                     color: '#C5EFF4',
                     fontSize: '17px'
                 }
@@ -120,6 +129,7 @@ export default {
             text: 'Заказать',
             style: {
                 background: '#9ccd2d',
+                backgroundSize: 'cover',
                 color: '#ffffff',
                 width: '100px',
                 borderRadius: '2px',
@@ -132,7 +142,8 @@ export default {
         namePage: 'Страница блюда',
         background: {
             style: {
-                background: 'rgba(46,46,51,.2)'
+                background: 'url(https://data2.1freewallpapers.com/detail/spaghetti-vegetables-oil.jpg)',
+                backgroundSize: 'cover'
             }
         },
         buttonClose: {
@@ -150,6 +161,7 @@ export default {
         productContainer: {
             style: {
                 background: '#fff00190',
+                backgroundSize: 'cover',
                 height: '600px',
                 width: '350px',
                 top: '20px',
@@ -159,6 +171,7 @@ export default {
         imageContainer: {
             style: {
                 background: '#f6f6f6',
+                backgroundSize: 'cover',
                 height: '220px',
                 width: '350px',
                 top: '20px',
@@ -172,7 +185,7 @@ export default {
             text: 'Кинг Наггетс (станд.)',
             style: {
                 color: '#000000',
-                fontSize: '23px',
+                fontSize: '25px',
                 left: '270px',
                 top: '250px',
                 width: '270px'
@@ -192,6 +205,7 @@ export default {
             text: 'Принять',
             style: {
                 background: '#97c62b',
+                backgroundSize: 'cover',
                 color: '#000533',
                 height: '40px',
                 width: '300px',
@@ -207,18 +221,21 @@ export default {
         namePage: 'Корзина покупок',
         background: {
             style: {
-                background: 'rgba(46,46,51,.2)'
+                background: 'url(https://data2.1freewallpapers.com/detail/spaghetti-vegetables-oil.jpg)', //'rgba(46,46,51,.2)'
+                backgroundSize: 'cover'
             }
         },
         productContainer: {
             style: {
                 background: '#fff00190',
+                backgroundSize: 'cover',
                 left: '220px'
             }
         },
         foodContainer: {
             style: {
-                background: '#f6f6f6'
+                background: '#f6f6f6',
+                backgroundSize: 'cover'
             }
         },
         textContainer: {
@@ -245,6 +262,7 @@ export default {
             text: 'Принять',
             style: {
                 background: '#97c62b',
+                backgroundSize: 'cover',
                 color: '#000533',
                 height: '40px',
                 width: '300px',
@@ -260,18 +278,21 @@ export default {
         namePage: 'Страница оплаты',
         background: {
             style: {
-                background: '#ffbdd3'
+                background: '#faffea',
+                backgroundSize: 'cover'
             }
         },
         header: {
             style: {
-                background: '#ffffff'
+                background: '#ffffff',
+                backgroundSize: 'cover'
             },
             buttonback: {
                 text: 'Назад',
                 style: {
                     width: '100px',
                     background: '#abcd12',
+                    backgroundSize: 'cover',
                     color: '#000000',
                     borderRadius: '10px',
                     borderWidth: '1px'
@@ -304,6 +325,7 @@ export default {
                     placeholder: 'телефон',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '40px',
                         width: '420px',
@@ -338,6 +360,7 @@ export default {
                     placeholder: 'подъезд',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '40px',
                         width: '190px',
@@ -363,6 +386,7 @@ export default {
                     placeholder: 'код домофона',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '40px',
                         width: '190px',
@@ -388,6 +412,7 @@ export default {
                     placeholder: 'квартра или офис',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '40px',
                         width: '190px',
@@ -413,6 +438,7 @@ export default {
                     placeholder: 'этаж',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '40px',
                         width: '190px',
@@ -446,6 +472,7 @@ export default {
                     placeholder: 'комментрарии к заказу',
                     style: {
                         background: '#ffffff',
+                        backgroundSize: 'cover',
                         color: '#000000',
                         height: '80px',
                         width: '420px',
@@ -458,7 +485,8 @@ export default {
         },
         rightPanel: {
             style: {
-                background: '#ffb112'
+                background: '#ffb112',
+                backgroundSize: 'cover'
             },
             textContainer: {
                 order: {
@@ -484,6 +512,7 @@ export default {
                 text: 'Принять',
                 style: {
                     background: '#97c62b',
+                    backgroundSize: 'cover',
                     color: '#000533',
                     height: '40px',
                     width: '200px',
