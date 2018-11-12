@@ -41,6 +41,22 @@ export default class Basket {
         return basket;
     }
 
+    static deleteProduct(id) {
+        let basket = localStorage['basket'];
+        if (!basket) {
+            basket = Basket.create()
+        }
+        basket = JSON.parse(basket);
+        if (!basket.products[id]) {
+            return;
+        }
+        const price = basket.products[id].count * basket.products[id].price;
+        delete basket.products[id];
+        localStorage['basket'] = JSON.stringify(basket);
+        Basket.changePrice(-price);
+        return basket;
+    }
+
     static changePrice(price) {
         let basket = localStorage['basket'];
         if (!basket) {

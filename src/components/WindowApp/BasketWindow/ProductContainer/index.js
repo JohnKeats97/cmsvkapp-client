@@ -15,6 +15,7 @@ export default (props) => {
         <FoodContainer
             basket={props.basket}
             config={props.config.foodContainer}
+            onDeleteProduct={props.onDeleteProduct}
         />
         <TextContainer
             basket={props.basket}

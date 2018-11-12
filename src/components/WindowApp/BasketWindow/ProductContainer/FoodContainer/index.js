@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Basket from '../../../../../utils/basket';
+
 import './style.css';
 
 
@@ -31,9 +33,27 @@ export default (props) => {
                         <div className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-quantity">
                             {products[productsId[i]].count}
                         </div>
-                        <button className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-minus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button" />
-                        <button className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-plus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button" />
-                        <button className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-delete components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button" />
+                        <button
+                            className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-minus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button"
+                            onClick={() => {
+                                if (products[productsId[i]].count === 1) {
+                                    return;
+                                }
+                                Basket.addProduct(products[productsId[i]], -1);
+                                props.onDeleteProduct(-1);
+                            }}
+                        />
+                        <button
+                            className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-plus components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button"
+                            onClick={() => {
+                                Basket.addProduct(products[productsId[i]], 1);
+                                props.onDeleteProduct(-1);
+                            }}
+                        />
+                        <button
+                            className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-delete components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-FoodContainer-button"
+                            onClick={() => {props.onDeleteProduct(products[productsId[i]].id)}}
+                        />
                     </div>
                 </div>
             </div>

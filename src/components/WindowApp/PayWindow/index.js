@@ -25,8 +25,18 @@ export default class PayWindow extends React.Component {
         this.props.onOpenNewPage('menuPage', {});
     }
 
+    newBasket() {
+        const basket = Basket.get();
+        if (JSON.stringify(this.state.basket) === JSON.stringify(basket)) {
+            return;
+        }
+        this.setState((state) => (state.basket = basket, state))
+    }
+
     render() {
         const {props, state} = this;
+
+        this.newBasket();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-PayWindow-root"
