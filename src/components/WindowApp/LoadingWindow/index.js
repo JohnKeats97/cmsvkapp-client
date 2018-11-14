@@ -2,6 +2,7 @@ import React from 'react'
 
 import Loader from './Loader/index'
 import Fetch from '../../../utils/fetch'
+import pageConfig from '../../../config/pages'
 
 import './style.css';
 
@@ -25,7 +26,7 @@ export default class LoadingWindow extends React.Component {
                     return;
                 }
                 const address = response;
-                Fetch.Get(`/services/info/?service_id=9291&lat=${response.pos.lat}&long=${response.pos.long}`)
+                Fetch.Get(`/services/info/?service_id=${pageConfig.serviceId}&lat=${response.pos.lat}&long=${response.pos.long}`)
                     .then((response)=>{
                         if(response.errortext) {
                             this.props.onLoading('addressPage', {});

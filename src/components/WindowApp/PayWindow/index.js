@@ -5,6 +5,7 @@ import RightPanel from './RightPanel';
 import Header from './Header';
 import Basket from '../../../utils/basket';
 import Fetch from "../../../utils/fetch";
+import pageConfig from '../../../config/pages'
 
 import './style.css';
 
@@ -24,9 +25,9 @@ export default class PayWindow extends React.Component {
 
     onClickOk() {
         const {props} = this;
-        const device_id = 0;
-        const install_id = 0;
-        const uuid = Math.floor(Math.random() * 10000000);
+        const device_id = '0';
+        const install_id = '0';
+        const uuid = Math.floor(Math.random() * 10000000).toString();
         const phone1 = document.getElementById('phone').value;
         const name = '';
         const building = props.address.geodata.building;
@@ -49,13 +50,13 @@ export default class PayWindow extends React.Component {
                 quantity: productBasket[product].count
             })
         }
-        const order = {
+        const order = JSON.stringify({
             service: {
-                id: 14839, // id сети
+                id: +pageConfig.serviceId, // id сети
                 affiliate_id: +this.props.idBranch
             },
             products
-        };
+        });
         const online_payment = '0';
 
         console.log({
@@ -77,7 +78,7 @@ export default class PayWindow extends React.Component {
             comment,
             order,
             online_payment
-        })
+        });
 
         Fetch.Post('/checkout/', {
             device_id,
@@ -110,9 +111,9 @@ export default class PayWindow extends React.Component {
     newBasket() {
         const basket = Basket.get();
         if (JSON.stringify(this.state.basket) === JSON.stringify(basket)) {
-            return;
+            return true;
         }
-        this.setState((state) => (state.basket = basket, state))
+        this.setState((state) => (state.basket = basket, state), () => {this.getDeliveryPrice()})
     }
 
     getDeliveryPrice() {
@@ -125,9 +126,12 @@ export default class PayWindow extends React.Component {
                 quantity: productBasket[product].count
             })
         }
+        if(!this.props.idBranch) {
+            return; // на другом экране
+        }
         Fetch.Post('/cart/calculate/', {
             service: {
-                id: 14839, // id сети
+                id: +pageConfig.serviceId, // id сети
                 affiliate_id: +this.props.idBranch
             },
             products
@@ -153,8 +157,8 @@ export default class PayWindow extends React.Component {
     render() {
         const {props, state} = this;
 
-        this.newBasket();
-        this.getDeliveryPrice();
+        const isNewBasket = this.newBasket();
+        isNewBasket && this.getDeliveryPrice();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-PayWindow-root"

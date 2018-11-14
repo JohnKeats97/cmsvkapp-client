@@ -4,6 +4,7 @@ import ProductContainer from "./ProductContainer";
 import ButtonOk from "./ButtonOk";
 import Basket from '../../../utils/basket';
 import Fetch from '../../../utils/fetch';
+import pageConfig from '../../../config/pages'
 
 import './style.css';
 
@@ -39,14 +40,15 @@ export default class ProductWindow extends React.Component {
     newBasket() {
         const basket = Basket.get();
         if (JSON.stringify(this.state.basket) === JSON.stringify(basket)) {
-            return;
+            return true;
         }
-        this.setState((state) => (state.basket = basket, state))
+        this.setState((state) => (state.basket = basket, state), () => {this.getDeliveryPrice()})
     }
 
     getDeliveryPrice() {
+        const {state} = this;
         let products = [];
-        const productBasket = this.state.basket.products;
+        const productBasket = state.basket.products;
         for (let product in productBasket) {
             products.push({
                 id: productBasket[product].id,
@@ -54,20 +56,23 @@ export default class ProductWindow extends React.Component {
                 quantity: productBasket[product].count
             })
         }
+        if(!this.props.idBranch) {
+            return; // на другом экране
+        }
         Fetch.Post('/cart/calculate/', {
             service: {
-                id: 14839, // id сети
+                id: +pageConfig.serviceId, // id сети
                 affiliate_id: +this.props.idBranch
             },
             products
         })
             .then(({response}) => {
-                if (response.products.length !== Object.keys(this.state.basket.products).length) {
+                if (response.products.length !== Object.keys(state.basket.products).length) {
                     return;
                 }
-                if (response.subtotal_price !== this.state.basket.price) {
+                if (response.subtotal_price !== state.basket.price) {
                     console.log('response.subtotal_price = ', response.cart_price);
-                    console.log('basket.price = ', this.state.basket.price);
+                    console.log('basket.price = ', state.basket.price);
                     alert('ошибка вычисления стоймости, выберите другие блюда');
                     return;
                 }
@@ -82,8 +87,8 @@ export default class ProductWindow extends React.Component {
     render() {
         const {props, state} = this;
 
-        this.newBasket();
-        this.getDeliveryPrice();
+        const isNewBasket = this.newBasket();
+        isNewBasket && this.getDeliveryPrice();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-BasketWindow-root"

@@ -1,4 +1,5 @@
 export default {
+    serviceId: '9291',
     loadingPage: {
         namePage: 'Страница загрузки',
         background: {
