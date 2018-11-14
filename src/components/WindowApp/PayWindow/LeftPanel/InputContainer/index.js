@@ -18,6 +18,7 @@ export default (props) => {
             {props.config.title.text}
         </div>
         <input
+            id={props.id}
             className="components-RightPanel-BodyRight-WindowApp-PayWindow-LeftPanel-InputContainer-input"
             style={props.config.input.style}
             placeholder={props.config.input.placeholder}

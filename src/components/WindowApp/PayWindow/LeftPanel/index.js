@@ -17,6 +17,7 @@ export default (props) => {
             {props.config.title.text}
         </div>
         <InputContainer
+            id={'phone'}
             config={props.config.telephone}
         />
         <div
@@ -26,15 +27,19 @@ export default (props) => {
             {props.userAddress}
         </div>
         <InputContainer
+            id={'entrance'}
             config={props.config.entrance}
         />
         <InputContainer
+            id={'intercom'}
             config={props.config.intercom}
         />
         <InputContainer
+            id={'apartment'}
             config={props.config.apartment}
         />
         <InputContainer
+            id={'floor'}
             config={props.config.floor}
         />
         <div
@@ -47,6 +52,7 @@ export default (props) => {
 
 
         <InputContainer
+            id={'comment'}
             config={props.config.comment}
         />
     </div>

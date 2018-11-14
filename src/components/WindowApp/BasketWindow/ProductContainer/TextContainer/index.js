@@ -14,7 +14,7 @@ export default (props) => {
         >
             Заказ
             <span className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-price">
-                {props.basket.price} руб
+                {props.basket.price || 0} руб
             </span>
         </div>
 
@@ -24,7 +24,7 @@ export default (props) => {
         >
             Доставка
             <span className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-price">
-                0 руб
+                {props.deliveryPrice || 0} руб
             </span>
         </div>
 
@@ -34,7 +34,7 @@ export default (props) => {
         >
             Итого
             <span className="components-RightPanel-BodyRight-WindowApp-BasketWindow-ProductContainer-TextContainer-price">
-                {props.basket.price} руб
+                {(props.basket.price + props.deliveryPrice) || 0} руб
             </span>
         </div>
 
