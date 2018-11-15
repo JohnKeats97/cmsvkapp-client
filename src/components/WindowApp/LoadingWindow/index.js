@@ -61,7 +61,6 @@ export default class LoadingWindow extends React.Component {
                                                 myMenu[OKmyMenu[i]][cat[j]] = myProduct[cat[j]];
                                             }
                                         }
-                                        console.log(address);
                                         this.props.onLoading('menuPage', {menu: myMenu, id: idBranch, address: address});
                                     })
                             })

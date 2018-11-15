@@ -29,14 +29,14 @@ export default class PayWindow extends React.Component {
         const install_id = '0';
         const uuid = Math.floor(Math.random() * 10000000).toString();
         const phone1 = document.getElementById('phone').value;
-        const name = '';
+        const name = '123';
         const building = props.address.geodata.building;
         const city_id = props.address.city.id;
         const subway = props.address.child.id;
         const street = props.address.geodata.street;
         const is_delivery_asap = '1';
         const send = '1';
-        const person_count = '1';
+        const person_count = '2';
         const entrance = document.getElementById('entrance').value;
         const doorcode = document.getElementById('intercom').value;
         const floor = document.getElementById('floor').value;
@@ -51,15 +51,13 @@ export default class PayWindow extends React.Component {
             })
         }
         const order = JSON.stringify({
-            service: {
-                id: +pageConfig.serviceId, // id сети
-                affiliate_id: +this.props.idBranch
-            },
+            service_id: +pageConfig.serviceId, // id сети
+            affiliate_id: +this.props.idBranch,
             products
         });
         const online_payment = '0';
 
-        console.log({
+        let bodyObject = {
             device_id,
             install_id,
             uuid,
@@ -78,34 +76,58 @@ export default class PayWindow extends React.Component {
             comment,
             order,
             online_payment
-        });
+        };
 
-        Fetch.Post('/checkout/', {
-            device_id,
-            install_id,
-            uuid,
-            phone1,
-            name,
-            building,
-            city_id,
-            subway,
-            street,
-            is_delivery_asap,
-            send,
-            person_count,
-            entrance,
-            doorcode,
-            floor,
-            comment,
-            order,
-            online_payment
-        })
+        let body = '';
+        for (let key in bodyObject) {
+            body += `${key}=${bodyObject[key]}&`
+        }
+        body = body.slice(0, -1);
+
+        Fetch.PostQueryString('/checkout/', body)
             .then((response) => {
-                console.log(response)
-            }).catch((err => {console.log(err)}))
-
-        alert('Ваша покупка совершена');
-        props.onOpenNewPage('menuPage', {});
+                if (response.error) {
+                    alert(response.error);
+                    return;
+                }
+                if (response.response.order) {
+                    alert('Ваш заказ обработан ' + response.response.order.description);
+                    props.onOpenNewPage('menuPage', {});
+                    return;
+                }
+                if (response.response.warning.warning_phone_need_verification) {
+                    const code = prompt('На ваш телефон отправлен код подтверждения', 'Введите код из смс');
+                    if (!code) {
+                        alert('Вы не ввели код, повторите попытку заказа');
+                        return;
+                    }
+                    Fetch.PostQueryString('/sms_verification/', `phone=${phone1}&code=${code}`)
+                        .then((response) => {
+                            if (response.error) {
+                                alert(response.error);
+                                return;
+                            }
+                            if (!response.response.verified) {
+                                alert('Вы ввели не верный код, повторите попытку заказа');
+                                return;
+                            }
+                            Fetch.PostQueryString('/checkout/', body)
+                                .then((response) => {
+                                    if (response.error) {
+                                        alert(response.error);
+                                        return;
+                                    }
+                                    if (response.response.order) {
+                                        alert('Ваш заказ обработан ' + response.response.order.description);
+                                        props.onOpenNewPage('menuPage', {});
+                                    }
+                                })
+                        })
+                }
+                else if (response.response.warning) {
+                    alert('Произошла ошибка, повторите попытку');
+                }
+            });
     }
 
     newBasket() {
