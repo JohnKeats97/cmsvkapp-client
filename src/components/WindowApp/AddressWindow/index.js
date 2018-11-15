@@ -35,12 +35,12 @@ export default class AddressWindow extends React.Component {
 
     onClick() {
         const input = document.querySelector('.components-RightPanel-BodyRight-WindowApp-AddressWindow-inputAddress');
-        const address = input.value;
-        if (address === '') {
-            alert('Введите валидный адресс');
+        const userAddress = input.value;
+        if (userAddress === '') {
+            alert('Введите валидный адрес');
             return;
         }
-        this.props.onOpenNewPage('loadingPage', {address});
+        this.props.onOpenNewPage('loadingPage', {userAddress});
     }
 
     onChange(e) {

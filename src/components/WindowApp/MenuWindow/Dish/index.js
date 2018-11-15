@@ -7,7 +7,6 @@ export default (props) => {
     const onClickProduct = () => {
         props.onOpenNewPage('productPage', {productInfo: menuItem});
     };
-
     const {menuItem} = props;
     return <div
         className="components-RightPanel-BodyRight-WindowApp-MenuWindow-item"

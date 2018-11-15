@@ -56,6 +56,9 @@ export default class MenuWindow extends React.Component {
                 style={props.pageConfig.title.style}
             >{titles[i]}</div>)
             for (let menuItemKey in menu[titles[i]]) {
+                if (!menu[titles[i]][menuItemKey]) {
+                    continue;
+                }
                 list.push(<Dish
                     onOpenNewPage={props.onOpenNewPage}
                     pageConfig={props.pageConfig}

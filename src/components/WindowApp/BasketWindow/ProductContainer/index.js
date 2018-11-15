@@ -18,6 +18,7 @@ export default (props) => {
             onDeleteProduct={props.onDeleteProduct}
         />
         <TextContainer
+            deliveryPrice={props.deliveryPrice}
             basket={props.basket}
             config={props.config.textContainer}
         />

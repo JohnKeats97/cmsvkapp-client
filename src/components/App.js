@@ -19,6 +19,8 @@ export default class Background extends React.Component {
         // введенный адрес
         this.userAddress = '';
 
+        this.address = {};
+
         // для меню блюд
         this.menu = {};
 
@@ -28,15 +30,18 @@ export default class Background extends React.Component {
         this.idBranch = null;
     }
 
-    onOpenNewPage (page, {menu = null, productInfo = null, address = null, id = null}) {
+    onOpenNewPage (page, {menu = null, productInfo = null, userAddress = null, id = null, address = null}) {
         if (menu) {
             this.menu = menu;
         }
         if (productInfo) {
             this.productInfo = productInfo;
         }
+        if (userAddress) {
+            this.userAddress = userAddress;
+        }
         if (address) {
-            this.userAddress = address;
+            this.address = address;
         }
         if(id) {
             this.idBranch = id;
@@ -49,12 +54,14 @@ export default class Background extends React.Component {
         const {state} = this;
         return <div className='root'>
             <WindowApp
+                address={this.address}
                 pageConfig={state.pageConfig}
                 page={state.page}
                 onOpenNewPage={this.onOpenNewPage.bind(this)}
                 menu={this.menu}
                 productInfo={this.productInfo}
                 userAddress={this.userAddress}
+                idBranch={this.idBranch}
             />
         </div>
     }

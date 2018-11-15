@@ -2,6 +2,7 @@ import React from 'react'
 
 import Loader from './Loader/index'
 import Fetch from '../../../utils/fetch'
+import pageConfig from '../../../config/pages'
 
 import './style.css';
 
@@ -24,7 +25,8 @@ export default class LoadingWindow extends React.Component {
                     alert(response.error.message);
                     return;
                 }
-                Fetch.Get(`/services/info/?service_id=16277&lat=${response.pos.lat}&long=${response.pos.long}`)
+                const address = response;
+                Fetch.Get(`/services/info/?service_id=${pageConfig.serviceId}&lat=${response.pos.lat}&long=${response.pos.long}`)
                     .then((response)=>{
                         if(response.errortext) {
                             this.props.onLoading('addressPage', {});
@@ -34,7 +36,7 @@ export default class LoadingWindow extends React.Component {
                         const idBranch = response.response.service.id;
 
                         let myMenu = {};
-                        Fetch.Get('/service/10000/menu/?data=menu')
+                        Fetch.Get(`/service/${idBranch}/menu/?data=menu`)
                             .then(({response}) => {
                                 const {menu} = response;
                                 for (let i = 0; i < menu.length; i++) {
@@ -44,7 +46,7 @@ export default class LoadingWindow extends React.Component {
                                     }
                                     myMenu[menu[i].title] = cat;
                                 }
-                                Fetch.Get('/service/10000/menu/?data=products')
+                                Fetch.Get(`/service/${idBranch}/menu/?data=products`)
                                     .then(({response})=>{
                                         const myProduct = {};
                                         const {products} = response;
@@ -59,7 +61,7 @@ export default class LoadingWindow extends React.Component {
                                                 myMenu[OKmyMenu[i]][cat[j]] = myProduct[cat[j]];
                                             }
                                         }
-                                        this.props.onLoading('menuPage', {menu: myMenu, id: idBranch});
+                                        this.props.onLoading('menuPage', {menu: myMenu, id: idBranch, address: address});
                                     })
                             })
                     });

@@ -37,10 +37,13 @@ export default (props) => {
             productInfo={props.productInfo}
         />
         <BasketWindow
+            idBranch={props.idBranch}
             pageConfig={props.pageConfig.basketPage}
             onOpenNewPage={props.onOpenNewPage}
         />
         <PayWindow
+            address={props.address}
+            idBranch={props.idBranch}
             userAddress={props.userAddress}
             pageConfig={props.pageConfig.payPage}
             onOpenNewPage={props.onOpenNewPage}

@@ -55,4 +55,32 @@ export default class Fetch
             return response.json();
         });
     }
+
+
+    /**
+     * Выполняет POST-запрос по указанному адресу с использованием fetch и headers application/x-www-form-urlencoded
+     * @param {string} url - адрес запроса
+     * @param {*} body - тело запроса (объект)
+     * @return {Promise}
+     */
+    static PostQueryString(url, body)
+    {
+        return fetch(baseURL + url,
+            {
+                method: 'POST',
+                mode: 'cors',
+                body: body,
+                headers:
+                    {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+            }).then(function (response)
+        {
+            if (response.status >= 400)
+                throw response;
+
+            return response.json();
+        });
+    }
 }
+
