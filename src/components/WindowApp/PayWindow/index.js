@@ -50,7 +50,7 @@ export default class PayWindow extends React.Component {
         const phone1 = this.createPhoneSpaces(document.getElementById('phone').value);
 
         if (!phone1) {
-            alert('Введите корректный номер телефона (без пробелов)');
+            alert('Введите корректный номер телефона');
             return;
         }
 
