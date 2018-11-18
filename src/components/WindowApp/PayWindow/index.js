@@ -24,7 +24,8 @@ export default class PayWindow extends React.Component {
     }
 
     createPhoneSpaces(phone) {
-        let phone1 = phone.split('');
+        let phone1 = phone.replace(/\s+/g, '');
+        phone1 = phone1.split('');
         if (phone1[0] === '+') {
             phone1.splice(2, 0, ' ');
             phone1.splice(6, 0, ' ');
