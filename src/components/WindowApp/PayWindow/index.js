@@ -23,13 +23,38 @@ export default class PayWindow extends React.Component {
         this.props.onOpenNewPage('basketPage', {});
     }
 
+    createPhoneSpaces(phone) {
+        let phone1 = phone.split('');
+        if (phone1[0] === '+') {
+            phone1.splice(2, 0, ' ');
+            phone1.splice(6, 0, ' ');
+            phone1.splice(10, 0, ' ');
+            phone1.splice(13, 0, ' ');
+            return phone1;
+        }
+        if (phone1[0] === '8') {
+            phone1.splice(1, 0, ' ');
+            phone1.splice(5, 0, ' ');
+            phone1.splice(9, 0, ' ');
+            phone1.splice(12, 0, ' ');
+            return phone1;
+        }
+        return '';
+    }
+
     onClickOk() {
         const {props} = this;
         const device_id = '0';
         const install_id = '0';
         const uuid = Math.floor(Math.random() * 10000000).toString();
-        const phone1 = document.getElementById('phone').value;
-        const name = '123';
+        const phone1 = this.createPhoneSpaces(document.getElementById('phone').value);
+
+        if (!phone1) {
+            alert('Введите корректный номер телефона');
+            return;
+        }
+
+        const name = 'name';
         const building = props.address.geodata.building;
         const city_id = props.address.city.id;
         const subway = props.address.child.id;
