@@ -48,6 +48,12 @@ export default class PayWindow extends React.Component {
         const install_id = '0';
         const uuid = Math.floor(Math.random() * 10000000).toString();
         const phone1 = this.createPhoneSpaces(document.getElementById('phone').value);
+
+        if (!phone1) {
+            alert('Введите корректный номер телефона');
+            return;
+        }
+
         const name = '123';
         const building = props.address.geodata.building;
         const city_id = props.address.city.id;
