@@ -54,7 +54,7 @@ export default class PayWindow extends React.Component {
             return;
         }
 
-        const name = '123';
+        const name = 'name';
         const building = props.address.geodata.building;
         const city_id = props.address.city.id;
         const subway = props.address.child.id;
