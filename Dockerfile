@@ -15,4 +15,4 @@ ADD ./ $WORK/
 WORKDIR $WORK
 
 RUN npm i
-CMD curl https://cmsvkapp.herokuapp.com/api/apps/$APP_NAME/downloadJSON?server_key=$SERVER_KEY --output ./src/config/pages.js & python addappname.py & npm start
+CMD curl https://cmsvkappback.site/api/apps/$APP_NAME/downloadJSON?server_key=$SERVER_KEY --output ./src/config/pages.js & python addappname.py & npm start
