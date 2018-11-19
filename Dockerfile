@@ -4,7 +4,7 @@ MAINTAINER Template Vkapp
 
 RUN yum -y install python
 RUN yum -y install epel-release
-RUN yum -y install nodejs npm
+RUN yum -y install nodejs npm --disablerepo=epel
 RUN yum -y install curl
 RUN yum -y install python
 
