@@ -4,7 +4,8 @@ import ProductContainer from "./ProductContainer";
 import ButtonOk from "./ButtonOk";
 import Basket from '../../../utils/basket';
 import Fetch from '../../../utils/fetch';
-import pageConfig from '../../../config/pages'
+import pageConfig from '../../../config/pages';
+import debounce from "../../../utils/debounce";
 
 import './style.css';
 
@@ -15,7 +16,8 @@ export default class ProductWindow extends React.Component {
         this.state = {
             basket: Basket.get(),
             deliveryPrice: 0
-        }
+        };
+        this.getDeliveryPriceDebounce = debounce(this.getDeliveryPrice, 2000);
     }
 
     onClickBackground() {
@@ -42,7 +44,7 @@ export default class ProductWindow extends React.Component {
         if (JSON.stringify(this.state.basket) === JSON.stringify(basket)) {
             return true;
         }
-        this.setState((state) => (state.basket = basket, state), () => {this.getDeliveryPrice()})
+        this.setState((state) => (state.basket = basket, state), () => {this.getDeliveryPriceDebounce()})
     }
 
     getDeliveryPrice() {
@@ -71,10 +73,9 @@ export default class ProductWindow extends React.Component {
                     return;
                 }
                 if (response.subtotal_price !== state.basket.price) {
-                    console.log('response.subtotal_price = ', response.cart_price);
+                    console.log('Произошла ошибка вычисления стоймости:');
+                    console.log('response.subtotal_price = ', response.subtotal_price);
                     console.log('basket.price = ', state.basket.price);
-                    alert('ошибка вычисления стоймости, выберите другие блюда');
-                    return;
                 }
                 if (this.state.deliveryPrice === response.delivery_price) {
                     return;
@@ -88,7 +89,7 @@ export default class ProductWindow extends React.Component {
         const {props, state} = this;
 
         const isNewBasket = this.newBasket();
-        isNewBasket && this.getDeliveryPrice();
+        isNewBasket && this.getDeliveryPriceDebounce();
 
         return <div
             className="components-RightPanel-BodyRight-WindowApp-BasketWindow-root"
