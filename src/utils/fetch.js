@@ -4,7 +4,7 @@
  * Модуль, предоставляющий методы для выполнения HTTP-запросов
  * @module Fetch
  */
-const baseURL = 'https://127.0.0.1:5000';
+const baseURL = 'https://midserver.site';
 
 
 export default class Fetch
