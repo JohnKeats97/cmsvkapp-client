@@ -17,7 +17,7 @@ export default class ProductWindow extends React.Component {
             basket: Basket.get(),
             deliveryPrice: 0
         };
-        this.getDeliveryPriceDebounce = debounce(this.getDeliveryPrice, 2000);
+        this.getDeliveryPriceDebounce = debounce(this.getDeliveryPrice, 1500);
     }
 
     onClickBackground() {
