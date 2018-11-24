@@ -26,18 +26,17 @@ export default class PayWindow extends React.Component {
     createPhoneSpaces(phone) {
         let phone1 = phone.replace(/\s+/g, '');
         phone1 = phone1.split('');
-        if (phone1[0] === '+') {
+        if (phone1[0] === '8') {
+            phone1.splice(0, 1, '+7');
+        }
+        phone1 = phone1.join('');
+        if (phone1.match(/\+\d{11}/g)[0] === phone1) {
+            phone1 = phone1.split('');
             phone1.splice(2, 0, ' ');
             phone1.splice(6, 0, ' ');
             phone1.splice(10, 0, ' ');
             phone1.splice(13, 0, ' ');
-            return phone1;
-        }
-        if (phone1[0] === '8') {
-            phone1.splice(1, 0, ' ');
-            phone1.splice(5, 0, ' ');
-            phone1.splice(9, 0, ' ');
-            phone1.splice(12, 0, ' ');
+            phone1 = phone1.join('');
             return phone1;
         }
         return '';
